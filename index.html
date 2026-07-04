@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Academic Mock Exam - Gulsum's Practice</title>
+    <style>
+        :root { --primary: #0056b3; --secondary: #f8f9fa; --accent: #ffc107; --text: #333; --border: #dee2e6; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--text); margin: 0; padding: 0; background: #f4f6f9; }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; background: #fff; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+        header { background: var(--primary); color: white; padding: 20px; text-align: center; border-radius: 8px 8px 0 0; }
+        h1, h2, h3 { color: var(--primary); }
+        .tabs { display: flex; flex-wrap: wrap; border-bottom: 2px solid var(--border); margin-bottom: 20px; }
+        .tab-btn { padding: 12px 20px; cursor: pointer; background: none; border: none; font-size: 16px; font-weight: bold; color: #666; border-bottom: 3px solid transparent; transition: 0.3s; }
+        .tab-btn.active { color: var(--primary); border-bottom: 3px solid var(--primary); }
+        .tab-content { display: none; animation: fadeIn 0.5s; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+        .section { margin-bottom: 30px; padding: 20px; background: var(--secondary); border-radius: 8px; border-left: 4px solid var(--primary); }
+        .question { margin-bottom: 15px; padding: 10px; background: white; border-radius: 4px; }
+        details { background: #e9ecef; padding: 10px; border-radius: 4px; margin-top: 20px; }
+        summary { cursor: pointer; font-weight: bold; color: var(--primary); }
+        .timer { position: fixed; top: 20px; right: 20px; background: var(--accent); padding: 10px 15px; border-radius: 50px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1); z-index: 100; }
+        .trap-alert { background: #f8d7da; color: #721c24; padding: 10px; border-radius: 4px; margin-top: 10px; font-size: 0.9em; border-left: 4px solid #f5c6cb;}
+        .bar-chart-mock { display: flex; gap: 20px; justify-content: center; margin: 20px 0; flex-wrap: wrap;}
+        .bar-group { text-align: center; width: 100px;}
+        .bar { width: 40px; display: inline-block; background: #0056b3; color: white; text-align: center; margin: 0 5px; border-radius: 4px 4px 0 0;}
+        .bar.female { background: #d9534f; }
+    </style>
+</head>
+<body>
+
+<div class="timer" id="timer">00:00:00</div>
+
+<div class="container">
+    <header>
+        <h1>IELTS Academic Mock Exam</h1>
+        <p>Prepared for Gulsum | Target: Band 5 → Band 7</p>
+    </header>
+
+    <div class="tabs">
+        <button class="tab-btn active" onclick="openTab(event, 'listening')">Listening</button>
+        <button class="tab-btn" onclick="openTab(event, 'reading')">Reading</button>
+        <button class="tab-btn" onclick="openTab(event, 'writing')">Writing</button>
+        <button class="tab-btn" onclick="openTab(event, 'keys')">Keys & Teacher Notes</button>
+    </div>
+
+    <!-- LISTENING TAB -->
+    <div id="listening" class="tab-content active">
+        <h2>Listening Test</h2>
+        <div class="section">
+            <h3>Section 1: Sports Center Registration</h3>
+            <p><em>Teacher Note: Read the transcript below carefully. Watch out for the "traps"!</em></p>
+            <div style="background: #fff; padding: 15px; border: 1px dashed #ccc; margin-bottom: 15px;">
+                <strong>Audio Transcript:</strong><br>
+                <strong>Sarah:</strong> I'm 23. Oh, wait, my birthday was actually yesterday, so I'm 24 now.<br>
+                <strong>Receptionist:</strong> The student membership is normally £20, but we have a special offer this month, so it’s just £15.
+            </div>
+            <div class="question">2. Age: <input type="text" placeholder="..."></div>
+            <div class="trap-alert">⚠️ <strong>Trap Alert!</strong> Did you write 23? She corrected herself to 24. Always wait for the final answer!</div>
+            
+            <div class="question">8. Membership fee for students is £<input type="text" placeholder="..."> per month.</div>
+            <div class="trap-alert">⚠️ <strong>Trap Alert!</strong> Did you write 20? The text says "normally £20, BUT... it's just £15". The word "but" signals a change!</div>
+        </div>
+    </div>
+
+    <!-- READING TAB -->
+    <div id="reading" class="tab-content">
+        <h2>Reading Test</h2>
+        <div class="section">
+            <h3>Passage 1: The Honeybee</h3>
+            <p>"The queen is the only fertile female and her sole purpose is to lay eggs, <strong>up to 2,000 a day during the spring</strong>."</p>
+            <div class="question">3. A queen bee lays exactly 2,000 eggs every single day of the year. [ TRUE / FALSE / NOT GIVEN ]</div>
+            <div class="trap-alert">⚠️ <strong>Trap Alert!</strong> The answer is <strong>FALSE</strong>. The text says "<em>up to</em>" (meaning a maximum, not exactly) and "<em>during the spring</em>" (not every single day of the year). IELTS loves to change "some" to "all" or "up to" to "exactly" to trick you!</div>
+        </div>
+    </div>
+
+    <!-- WRITING TAB -->
+    <div id="writing" class="tab-content">
+        <h2>Writing Test</h2>
+        <div class="section">
+            <h3>Task 1: Bar Chart (20 Minutes)</h3>
+            <p>The bar chart below shows the percentage of men and women in Australia who participated in five different leisure activities in 2023.</p>
+            
+            <div class="bar-chart-mock">
+                <div class="bar-group">
+                    <div style="height: 170px; display: flex; align-items: flex-end; justify-content: center;">
+                        <div class="bar" style="height: 85%;">85%</div>
+                        <div class="bar female" style="height: 80%;">80%</div>
+                    </div>
+                    <p>Watching TV</p>
+                </div>
+                <div class="bar-group">
+                    <div style="height: 170px; display: flex; align-items: flex-end; justify-content: center;">
+                        <div class="bar" style="height: 60%;">60%</div>
+                        <div class="bar female" style="height: 35%;">35%</div>
+                    </div>
+                    <p>Playing Sports</p>
+                </div>
+                <div class="bar-group">
+                    <div style="height: 170px; display: flex; align-items: flex-end; justify-content: center;">
+                        <div class="bar" style="height: 40%;">40%</div>
+                        <div class="bar female" style="height: 65%;">65%</div>
+                    </div>
+                    <p>Reading</p>
+                </div>
+            </div>
+            <p style="text-align: center;"><em>Blue = Men | Red = Women</em></p>
+
+            <p><strong>Task:</strong> Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.</p>
+            <textarea style="width:100%; height:200px; padding:10px;" placeholder="Type your Task 1 response here..."></textarea>
+            <div class="trap-alert">💡 <strong>Teacher Tip for Band 7:</strong> Do not just list every number! Group the data. For example, write one paragraph about activities that are popular for BOTH men and women (like TV), and another paragraph about activities where men and women are very DIFFERENT (like Sports vs Reading).</div>
+        </div>
+        <div class="section">
+            <h3>Task 2: Essay (40 Minutes)</h3>
+            <p>Some people think that technology has made our lives more complex, while others believe it has made them simpler.</p>
+            <p><strong>Task:</strong> Discuss both these views and give your own opinion. Write at least 250 words.</p>
+            <textarea style="width:100%; height:300px; padding:10px;" placeholder="Type your Task 2 response here..."></textarea>
+        </div>
+    </div>
+
+    <!-- KEYS & TIPS TAB -->
+    <div id="keys" class="tab-content">
+        <h2>Answer Keys & Teacher Notes</h2>
+        
+        <details>
+            <summary>Listening Answer Key</summary>
+            <p>1. Jenkins 2. <strong>24</strong> 3. Mill 4. 457 5. student 6. yoga 7. towel 8. <strong>15</strong> 9. Sunday 10. medium</p>
+        </details>
+
+        <details>
+            <summary>Reading Answer Key</summary>
+            <p>1. FALSE 2. FALSE 3. <strong>FALSE</strong> (Trap: 'up to' vs 'exactly') 4. FALSE 5. TRUE 6. queen 7. Worker 8. drones 9. age 10. larvae 11. foragers 12. dangerous 13. waggle</p>
+        </details>
+
+        <div style="background: #d1ecf1; color: #0c5460; padding: 15px; border-radius: 4px; margin-top: 20px; border-left: 4px solid #bee5eb;">
+            <h3>👩‍🏫 Teacher's Guide for Gulsum (A1/A2 to Band 5->7)</h3>
+            <ul>
+                <li><strong>Grammar:</strong> To get a Band 7, you must use "complex sentences". This means using words like <em>Although, Because, While, Which</em>. <br><em>Example: "Although technology is useful, it can be stressful."</em></li>
+                <li><strong>Vocabulary:</strong> Don't memorize long, difficult words. Learn "collocations" (words that go together). For example, we say <em>"heavy rain"</em> (not "thick rain") and <em>"make a decision"</em> (not "do a decision").</li>
+                <li><strong>Exam Strategy:</strong> In Reading, if a question uses the word "ALL" or "EVERY", it is usually FALSE. The text usually says "SOME" or "MANY". Always check the details!</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) { tabcontent[i].classList.remove("active"); }
+        tablinks = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < tablinks.length; i++) { tablinks[i].classList.remove("active"); }
+        document.getElementById(tabName).classList.add("active");
+        evt.currentTarget.classList.add("active");
+    }
+
+    let seconds = 0;
+    setInterval(() => {
+        seconds++;
+        let hrs = String(Math.floor(seconds / 3600)).padStart(2, '0');
+        let mins = String(Math.floor((seconds % 3600) / 60)).padStart(2, '0');
+        let secs = String(seconds % 60).padStart(2, '0');
+        document.getElementById('timer').innerText = `${hrs}:${mins}:${secs}`;
+    }, 1000);
+</script>
+
+</body>
+</html>
